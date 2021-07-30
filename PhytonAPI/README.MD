@@ -1,29 +1,34 @@
-IBM IoT info
+# IBM IoT info
 
-Acessoa ao dashboard da organização: OBS válido por 30 dias a partir de 28/07
+
+
+Acesso ao dashboard da organização: OBS válido por 30 dias a partir de 28/07
 https://gi2a9g.internetofthings.ibmcloud.com/dashboard/devices/browse
 
 
-Dados do Device
+## [Dados do Device]
 
-ID da organização:
+
+```python
+#ID da organização:
 gi2a9g
-Tipo de dispositivo:
+#Tipo de dispositivo:
 Android
-ID do dispositivo
+#ID do dispositivo
 AD
-Método de autenticação:
+#Método de autenticação:
 use-token-auth
-Token de autenticação:
+#Token de autenticação:
 XdgjsfITLhYLBIsxB+
-==================
-Dados da chave de API
+#Dados da chave de API
 a-gi2a9g-lxhmyt5fgf
+```
 
-token
-TQ_+daqN?M5YKLLFGA
+Links úteis
 
-===================
 https://www.linkedin.com/pulse/build-your-first-iot-application-ibm-watson-platform-janakiram-msv/
+
 https://github.com/janakiramm/techtalk
+
 pip install ibmiotf
+
