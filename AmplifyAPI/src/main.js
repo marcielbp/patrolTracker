@@ -1,11 +1,16 @@
-import Amplify from 'aws-amplify';
-import aws_exports from './aws-exports';
-import {
-  applyPolyfills,
-  defineCustomElements,
-} from '@aws-amplify/ui-components/loader';
+import Vue from 'vue';
+import App from './App.vue';
 
-Amplify.configure(aws_exports);
-applyPolyfills().then(() => {
-  defineCustomElements(window);
-});
+import '@aws-amplify/ui-vue';
+import Amplify from 'aws-amplify';
+import awsconfig from './aws-exports';
+
+Amplify.configure(awsconfig);
+
+Vue.config.productionTip = false;
+
+Vue.config.devtools = true;
+
+new Vue({
+	render: h => h(App),
+}).$mount('#app');

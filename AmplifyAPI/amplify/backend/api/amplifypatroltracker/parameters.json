@@ -1,0 +1,11 @@
+{
+  "AppSyncApiName": "amplifypatroltracker",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authamplifypatroltracker27489278",
+      "Outputs.UserPoolId"
+    ]
+  }
+}

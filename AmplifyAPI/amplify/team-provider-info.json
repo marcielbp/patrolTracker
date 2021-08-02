@@ -10,6 +10,17 @@
       "StackName": "amplify-amplifypatroltracker-dev-120131",
       "StackId": "arn:aws:cloudformation:us-east-1:325676111687:stack/amplify-amplifypatroltracker-dev-120131/87b09400-f3a2-11eb-8170-1245efb4d2e3",
       "AmplifyAppId": "dtmnwuj2y3o0w"
+    },
+    "categories": {
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "dtmnwuj2y3o0w",
+          "type": "manual"
+        }
+      },
+      "auth": {
+        "amplifypatroltracker27489278": {}
+      }
     }
   }
 }
