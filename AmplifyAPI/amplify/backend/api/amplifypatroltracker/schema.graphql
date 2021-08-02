@@ -1,6 +1,34 @@
-type Todo @model @auth(rules: [{allow: public}]) {
+type Usuario @model @auth(rules: [{allow: public}]) {
   id: ID!
-  name: String!
-  description: String
+  username: String
+  profile: ID
+}
+
+type Rondista @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  RondistaRondas: [RondistaRonda] @connection(keyName: "byRondista", fields: ["id"])
+}
+
+type Locations @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  geopos: AWSJSON
+}
+
+type Ronda @model @auth(rules: [{allow: public}, {allow: groups, groups: ["administradores"], operations: [read, create, update, delete]}, {allow: groups, groups: ["rondistas"], operations: [read]}, {allow: groups, groups: ["chefes"], operations: [read, create, update]}]) {
+  id: ID!
+  rondista: ID
+  check: ID
+  inicio: AWSTimestamp
+  fim: AWSTimestamp
+  status: String
+  rondistas: [RondistaRonda] @connection(keyName: "byRonda", fields: ["id"])
+}
+
+type RondistaRonda @model(queries: null) @key(name: "byRondista", fields: ["rondistaID", "rondaID"]) @key(name: "byRonda", fields: ["rondaID", "rondistaID"]) @auth(rules: [{allow: public}, {allow: public}, {allow: groups, groups: ["administradores"], operations: [read, create, update, delete]}, {allow: groups, groups: ["rondistas"], operations: [read]}, {allow: groups, groups: ["chefes"], operations: [read, create, update]}]) {
+  id: ID!
+  rondistaID: ID!
+  rondaID: ID!
+  rondista: Rondista! @connection(fields: ["rondistaID"])
+  ronda: Ronda! @connection(fields: ["rondaID"])
 }
  

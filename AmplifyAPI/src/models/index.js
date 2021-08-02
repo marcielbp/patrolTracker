@@ -4,8 +4,12 @@ import { schema } from './schema';
 
 
 
-const { Todo } = initSchema(schema);
+const { Usuario, Rondista, RondistaRonda, Ronda, Locations } = initSchema(schema);
 
 export {
-  Todo
+  Usuario,
+  Rondista,
+  RondistaRonda,
+  Ronda,
+  Locations
 };
