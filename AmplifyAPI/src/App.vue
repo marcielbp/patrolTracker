@@ -1,49 +1,37 @@
 <template>
-	<div>
-		<amplify-container v-if="authState !== 'signedin'">
-			<amplify-authenticator></amplify-authenticator>
-		</amplify-container>
-		<div id="app" v-if="authState === 'signedin' && user" class="App">
-			<div class="App-header">Hello, {{ user.username }}</div>
-			<HelloWorld msg="Welcome to Your Vue.js App" />
-			<amplify-sign-out></amplify-sign-out>
-		</div>
-	</div>
+  <div>
+    <div v-if="authState !== 'signedin'">You are signed out.</div>
+    <amplify-authenticator>
+      <div v-if="authState === 'signedin' && user">
+        <div>Hello, {{user.username}}</div>
+      </div>
+      <amplify-sign-out></amplify-sign-out>
+    </amplify-authenticator>
+  </div>
 </template>
+
 <script>
-import HelloWorld from './components/HelloWorld.vue';
-import { onAuthUIStateChange } from '@aws-amplify/ui-components';
+import { onAuthUIStateChange } from '@aws-amplify/ui-components'
 
 export default {
-	name: 'Authenticator',
-	components: {
-		HelloWorld,
-	},
-	created() {
-		onAuthUIStateChange((authState, authData) => {
-			this.authState = authState;
-			this.user = authData;
-		});
-	},
-	data() {
-		return {
-			user: undefined,
-			authState: undefined,
-		};
-	},
-	beforeDestroy() {
-		return onAuthUIStateChange;
-	},
-};
+  name: 'AuthStateApp',
+  created() {
+    this.unsubscribeAuth = onAuthUIStateChange((authState, authData) => {
+      this.authState = authState;
+      this.user = authData;
+    })
+  },
+  data() {
+    return {
+      user: undefined,
+      authState: undefined,
+      unsubscribeAuth: undefined
+    }
+  },
+  beforeDestroy() {
+    this.unsubscribeAuth();
+  },
+}
+
 </script>
 
-<style>
-#app {
-	font-family: Avenir, Helvetica, Arial, sans-serif;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	text-align: center;
-	color: #2c3e50;
-	margin-top: 60px;
-}
-</style>
