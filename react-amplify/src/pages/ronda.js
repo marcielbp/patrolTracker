@@ -1,5 +1,6 @@
 //file: src/pages/ronda.js
 import React from 'react';
+
 const Ronda = () => {
     return (
         <div>
