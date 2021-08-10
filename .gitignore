@@ -1,0 +1,44 @@
+.DS_Store
+AmplifyAPI/node_modules
+/dist
+
+
+# local env files
+.env.local
+.env.*.local
+
+# Log files
+AmplifyAPI/npm-debug.log*
+AmplifyAPI/yarn-debug.log*
+AmplifyAPI/yarn-error.log*
+AmplifyAPI/pnpm-debug.log*
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+#amplify-do-not-edit-begin
+AmplifyAPI/amplify/\#current-cloud-backend
+AmplifyAPI/amplify/.config/local-*
+AmplifyAPI/amplify/logs
+AmplifyAPI/amplify/mock-data
+AmplifyAPI/amplify/backend/amplify-meta.json
+AmplifyAPI/amplify/backend/awscloudformation
+AmplifyAPI/amplify/backend/.temp
+AmplifyAPI/build/
+AmplifyAPI/dist/
+AmplifyAPI/node_modules/
+AmplifyAPI/aws-exports.js
+AmplifyAPI/awsconfiguration.json
+AmplifyAPI/amplifyconfiguration.json
+AmplifyAPI/amplifyconfiguration.dart
+AmplifyAPI/amplify-build-config.json
+AmplifyAPI/amplify-gradle-config.json
+AmplifyAPI/amplifytools.xcconfig
+AmplifyAPI/.secret-*
+#amplify-do-not-edit-end

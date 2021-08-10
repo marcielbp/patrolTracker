@@ -1,0 +1,14 @@
+[
+  {
+    "groupName": "rondistas",
+    "precedence": 1
+  },
+  {
+    "groupName": "chefes",
+    "precedence": 2
+  },
+  {
+    "groupName": "administradores",
+    "precedence": 3
+  }
+]

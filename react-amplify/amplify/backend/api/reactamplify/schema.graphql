@@ -1,0 +1,8 @@
+type Locations @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  lat: Float
+  lon: Float
+  timestamp: AWSTimestamp
+  routeID: String
+}
+ 
