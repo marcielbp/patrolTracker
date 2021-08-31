@@ -9,10 +9,12 @@ import { Auth } from 'aws-amplify'
 function App() {
   return (
     <div className="App">
+    <div id=""
       <h1>Patrol Tracker</h1>
       <div>
-      <a href="profile">Profile</a>
-      <a href="checkin">CheckIn</a>
+      <a href="./profile">Profile</a>
+      <a href="./checkin">CheckIn</a>
+      <a href="./report">Report</a>
         <Webpages />
       </div>
     </div>
