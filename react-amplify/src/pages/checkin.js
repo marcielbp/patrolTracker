@@ -45,11 +45,11 @@ class CheckIn extends React.Component {
   render() {
     return (
     <div>
-        <h4>Using geolocation JavaScript API in React. {center.lat} and {center.lng} </h4>
+        <h4>Current Location: {center.lat} , {center.lng} </h4>
         <Map
           google={this.props.google}
-          zoom={14}
-          style={mapStyles}
+          zoom={14
+}          style={mapStyles}
           initialCenter={{
             lat: center.lat,
             lng: center.lng

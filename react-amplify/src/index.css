@@ -4,6 +4,13 @@
   --amplify-primary-shade: #666666;
 }
 
+#profile-header{
+    background-color: #5DB075;
+    padding: 50px;
+    color:  #ffffff;
+}
+
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
